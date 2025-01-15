@@ -105,3 +105,45 @@ To extract sentences from a `Doc` object, use `for sent in doc.sents`. To conver
 ### Named Entity Recognition (NER)
 
 A named entity is a "real-world object" assigned a name, such as a person, country, product, or book title. spaCy can recognize and classify various types of named entities in a document through a prediction model.
+
+# Attribute and Matching Techniques in spaCy
+
+## **Attributes**
+| Attribute  | Description                               |
+|------------|-------------------------------------------|
+| **ORTH**   | The exact verbatim text of a token.       |
+| **ENT_TYPE** | The token’s entity label (e.g., PERSON, ORG). |
+
+---
+
+## **Regex Matching**
+- The `REGEX` operator allows defining rules for any attribute string value, including custom attributes.
+- Must be applied to an attribute like `TEXT`, `LOWER`, or `TAG`.
+
+---
+
+## **Fuzzy Matching**
+  - Fuzzy matching allows matching tokens with alternate spellings, typos, or similar variations.
+  - Handles misspellings and minor errors in text.
+- **ex:** 
+  - Searching for names, places, or phrases where errors are common.
+  - Matching text with small variations without specifying every possible variant.
+
+---
+
+## **Matching Techniques**
+
+### **Phrase Patterns**
+- Match exact words or sequences of words (phrases).
+- You know the exact words or phrases you want to match.
+- You don’t care about attributes like part-of-speech tags or lemmas.
+- `PhraseMatcher`
+
+---
+
+### **Token Patterns**
+-  Match sequences of tokens based on their attributes (e.g., part-of-speech, lowercase forms, etc.).
+- You need more flexibility, such as matching adjectives followed by nouns.
+- You want to match based on linguistic features like POS tags, dependency relations, or lemmas.
+-  `Matcher`
+
