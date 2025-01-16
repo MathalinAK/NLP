@@ -146,4 +146,9 @@ A named entity is a "real-world object" assigned a name, such as a person, count
 - You need more flexibility, such as matching adjectives followed by nouns.
 - You want to match based on linguistic features like POS tags, dependency relations, or lemmas.
 -  `Matcher`
+## Bag of Words
+
+- Initial methods for creating word vectors in a pipeline take all words in a corpus and convert them into a single, unique number. 
+- This is known as a **bag of words**.
+
 
