@@ -150,5 +150,62 @@ A named entity is a "real-world object" assigned a name, such as a person, count
 
 - Initial methods for creating word vectors in a pipeline take all words in a corpus and convert them into a single, unique number. 
 - This is known as a **bag of words**.
+v2:
+# Stemming in NLP
+
+**Stemming** is the process of reducing a word to its word stem by removing suffixes and prefixes, or by mapping it to the root form of the word (which can also be called a "lemma"). Stemming is an important concept in **Natural Language Understanding (NLU)** and **Natural Language Processing (NLP)**.
+
+### Example: 
+- Words like **eating**, **eats**, and **eaten** are reduced to the root form **eat**.
+
+### Why is Stemming Important?
+Stemming is important because it helps in handling different forms of the same word, making it easier to classify and analyze text, especially for tasks like sentiment analysis and text classification.
+
+### Challenges in Stemming:
+- Sometimes stemming might not return the correct meaning of the word. For instance, the word "history" might be stemmed to "histori", which is not a valid root form of the word.
+
+## Sentiment Classification Problem:
+In the context of a **classification problem** like determining whether product reviews are **positive** or **negative**, stemming helps in reducing variations of words (like "eating", "eats", "eaten") to their common stem ("eat").
+
+---
+
+## Stopwords in NLTK vs. spaCy
+
+### NLTK:
+In **NLTK**, you use `stopwords.words("english")` to directly access the list of stopwords.
+
+### spaCy:
+In **spaCy**, you access stopwords using the language model's `Defaults.stop_words`.
+# Preprocessing in NLP
+
+Preprocessing is essential to clean the data and ensure that it's ready for conversion into vectors in an efficient way. One of the key preprocessing techniques is **Lemmatization**, which addresses issues like variations in word forms by returning the word to its base form.
+
+## Lemmatization
+
+Lemmatization solves many language-related issues because it uses a dictionary of words and their corresponding root forms. For example, if you input the word **"goes"**, lemmatization will return **"go"**, which is the correct grammatical form of the word.
+
+### Lemmatizer:
+Lemmatization techniques are similar to **stemming**. However, the difference is that lemmatization outputs a **valid word** rather than a stem. The word obtained after lemmatization is called a **lemma** (e.g., "goes" becomes the root word **"go"**).
+
+Unlike stemming, lemmatization guarantees that the output is a valid word with the same meaning.
+
+---
+
+## Word Embedding
+
+**Word Embedding** is a technique in **Natural Language Processing (NLP)** used to represent words for text analysis. This representation is typically in the form of a real-valued vector that encodes the meaning of a word. In this space, words that are closer to each other in the vector space are expected to have similar meanings.
+
+---
+
+## Word2Vec
+
+**Word2Vec** is a technique used in **Natural Language Understanding (NLU)**. The **Word2Vec algorithm** uses a neural network model to learn word associations from a large corpus of text. Once the model is trained, it can:
+- Detect synonymous words
+- Suggest additional words for partial sentences
+
+As the name implies, Word2Vec represents each distinct word with a list of numbers called a **vector**.
+
+---
+
 
 
