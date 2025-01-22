@@ -205,6 +205,34 @@ Unlike stemming, lemmatization guarantees that the output is a valid word with t
 
 As the name implies, Word2Vec represents each distinct word with a list of numbers called a **vector**.
 
+# Transformers
+
+Transformers are powerful models used in NLP and other domains. They consist of **encoders** and **decoders** that work together for tasks like translation, summarization, and text generation.
+
+## Encoders and Decoders
+
+- **Encoder**: Takes an input sentence (e.g., *"je suis étudiant"* in French) and converts it into a hidden representation that captures the sentence's meaning.  
+- **Decoder**: Transforms the hidden representation into the desired output language (e.g., *"I am a student"* in English).
+
+## How Transformers Work
+
+1. **Tokenization**:  
+   The input sentence is tokenized and converted into vectors.
+
+2. **Encoder Processing**:  
+   These vectors pass through multiple layers of the encoder, which include:
+   - **Feedforward Neural Networks**  
+   - **Self-Attention Mechanisms**
+
+3. **Decoder Processing**:  
+   - The output of the encoder is passed to the decoder.  
+   - The decoder uses:
+     - **Feedforward Neural Networks**  
+     - **Cross-Attention** (to focus on the encoder's output while generating the target sentence).
+
+4. **Output Generation**:  
+   The decoder generates the output sentence token by token.
+
 ---
 
 
