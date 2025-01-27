@@ -234,7 +234,29 @@ Transformers are powerful models used in NLP and other domains. They consist of 
    The decoder generates the output sentence token by token.
 
 ---
-# ROUGE for Summarization Evaluation
+| **Model**   | **Key Features**                                          | **Disadvantages**                                         | **Best Use Cases**                              | **Example** |
+|-------------|-----------------------------------------------------------|----------------------------------------------------------|-------------------------------------------------|-------------|
+| **BoW**     | Represents text as a vector of word counts, ignoring order. | High-dimensional and lacks understanding of word meaning or context. | Basic text classification, spam detection, simple sentiment analysis. | Text: “The food was great!” → BoW: [great:1, food:1, was:1] |
+| **GloVe**   | Pre-trained embeddings that capture global word co-occurrence. | Static embeddings; doesn’t consider word context in sentences. | Similarity search, word clustering, basic semantic understanding tasks. | Word: "king" → Embedding vector representing semantic meaning (e.g., closer to "queen" than "dog"). |
+| **Word2Vec**| Learns word vectors based on context in a given window of words. | Requires large datasets to train effectively; struggles with out-of-context words. | Analyzing relationships between words, handling rare or domain-specific terms. | Context: “The king ruled the land.” → “king” is close to “queen” and “land” in the vector space. |
+| **BERT**    | Contextual embeddings; uses transformer architecture to understand words in context. | Computationally intensive and might be overkill for simpler tasks. | Advanced NLP tasks like named entity recognition (NER), question answering, complex sentiment analysis. | Sentence: "The bank is by the river." → BERT understands whether "bank" refers to a financial institution or the side of a river based on context. |
+
+### Examples Explained:
+
+- **BoW**:  
+  BoW works by counting the number of occurrences of each word in a document. For instance, if we have the text "The food was great!", the model might output a vector like `[great:1, food:1, was:1]`, ignoring word order and context.
+
+- **GloVe**:  
+  GloVe creates fixed embeddings where words are represented in a vector space based on their global co-occurrence in the corpus. For example, the word "king" will have a vector that is closer to "queen" than "dog" because of the shared semantic relationship.
+
+- **Word2Vec**:  
+  Word2Vec uses local context in a sliding window to learn relationships between words. If the sentence is "The king ruled the land," it will place the word "king" close to words like "queen" and "land" because they co-occur in similar contexts.
+
+- **BERT**:  
+  BERT is highly advanced and considers the entire sentence for context. For example, the word "bank" in the sentence "The bank is by the river" is understood to refer to the side of a river (due to context) rather than a financial institution.
+
+
+# ROUGE 
 
 **Purpose**:  
 ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is used to evaluate the quality of summaries by comparing n-grams (chunks of n words) in the generated summary with those in the reference summary.
