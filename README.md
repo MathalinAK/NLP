@@ -266,6 +266,35 @@ ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is used to evaluate th
 - Used for computing a summary score across the entire summary.
 - It averages the ROUGE scores over individual sentences.
 
+# BLEU for Machine Translation Evaluation
+
+**Purpose**:  
+BLEU (Bilingual Evaluation Understudy) assigns a single numerical score to a translation that indicates how good it is compared to one or more reference translations.
+
+## Approach:
+
+- BLEU compares the n-grams (chunks of n consecutive words) of the generated translation with those in the reference translation.
+- **N-grams**: Chunks of n words (unigrams, bigrams, etc.).
+- **Precision Calculation**:  
+  Count the number of matching words between the generated and reference translations, then normalize by dividing by the number of words in the generated translation.
+
+- **Modified Precision**:  
+  BLEU uses modified precision, clipping the count of a word to the maximum number of times it appears in the reference translation. This avoids overcounting repeated words.
+
+- **Word Order**:  
+  BLEU accounts for word order by computing precision for different n-grams (unigrams, bigrams, etc.), and then averaging the results to handle the word ordering problem.
+
+## Advantages:
+- Fast and simple to calculate.
+- Widely used in the field of machine translation.
+
+## Disadvantages:
+- Doesn't consider the meaning of the words.
+- Does not incorporate sentence structure.
+- Struggles with non-English languages.
+- Hard to compute a score with different tokenizers.
+
+
 
 
 
