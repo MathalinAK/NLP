@@ -234,6 +234,7 @@ Transformers are powerful models used in NLP and other domains. They consist of 
    The decoder generates the output sentence token by token.
 
 ---
+## limitation between BOW,GLOVE,WORD2VEC,BERT
 | **Model**   | **Key Features**                                          | **Disadvantages**                                         | **Best Use Cases**                              | **Example** |
 |-------------|-----------------------------------------------------------|----------------------------------------------------------|-------------------------------------------------|-------------|
 | **BoW**     | Represents text as a vector of word counts, ignoring order. | High-dimensional and lacks understanding of word meaning or context. | Basic text classification, spam detection, simple sentiment analysis. | Text: “The food was great!” → BoW: [great:1, food:1, was:1] |
