@@ -234,6 +234,38 @@ Transformers are powerful models used in NLP and other domains. They consist of 
    The decoder generates the output sentence token by token.
 
 ---
+# ROUGE for Summarization Evaluation
+
+**Purpose**:  
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is used to evaluate the quality of summaries by comparing n-grams (chunks of n words) in the generated summary with those in the reference summary.
+
+## Key Concepts:
+
+- **N-grams**: Chunks of n consecutive words in a text.
+  - **Unigrams**: Single words.
+  - **Bigrams**: Pairs of consecutive words.
+
+## ROUGE-1 (Unigrams):
+- Measures the recall of unigrams (individual words).
+- **Calculation**:  
+  Count matching words between generated and reference summary, then normalize by dividing by the number of words in the reference summary.
+
+## ROUGE-2 (Bigrams):
+- Measures recall of bigrams (pairs of consecutive words).
+- **Calculation**:  
+  Count how many bigrams in the generated summary are also present in the reference summary. 
+  ROUGE-2 tends to have lower values as there are fewer bigrams to match.
+
+## ROUGE-L (Longest Common Subsequence):
+- Compares summaries based on the longest common subsequences (LCS).
+- **LCS**: A sequence of words that appears in the same order in both summaries, but not necessarily contiguously.
+- **Advantage**:  
+  Doesn't depend on consecutive n-gram matches, making it better at capturing sentence structure and word order.
+
+## ROUGE-LSum:
+- Used for computing a summary score across the entire summary.
+- It averages the ROUGE scores over individual sentences.
+
 
 
 
